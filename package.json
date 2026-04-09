@@ -1,0 +1,83 @@
+{
+  "name": "@starstack/strapi-plugin-auto-save",
+  "version": "1.0.0",
+  "description": "Automatically saves Strapi v5 content entries as you type. Debounced background saves, live status indicator, and zero configuration required.",
+  "keywords": [
+    "strapi",
+    "strapi-plugin",
+    "auto-save",
+    "autosave",
+    "content-manager",
+    "draft",
+    "productivity",
+    "strapi5"
+  ],
+  "homepage": "https://github.com/Starstack-Technologies/strapi-plugin-auto-save#readme",
+  "bugs": {
+    "url": "https://github.com/Starstack-Technologies/strapi-plugin-auto-save/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Starstack-Technologies/strapi-plugin-auto-save.git"
+  },
+  "license": "MIT",
+  "author": {
+    "name": "Starstack",
+    "url": "https://starstacktech.com"
+  },
+  "maintainers": [
+    {
+      "name": "Starstack",
+      "url": "https://starstacktech.com"
+    }
+  ],
+  "exports": {
+    "./strapi-admin": {
+      "source": "./admin/src/index.js",
+      "import": "./dist/admin/index.mjs",
+      "require": "./dist/admin/index.js",
+      "default": "./dist/admin/index.js"
+    },
+    "./strapi-server": {
+      "source": "./strapi-server.js",
+      "import": "./dist/server/index.mjs",
+      "require": "./dist/server/index.js",
+      "default": "./dist/server/index.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "main": "./strapi-server.js",
+  "files": [
+    "strapi-admin.js",
+    "strapi-server.js",
+    "dist/",
+    "logo.png",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "strapi-plugin build",
+    "verify": "strapi-plugin verify",
+    "watch": "strapi-plugin watch",
+    "watch:link": "strapi-plugin watch:link"
+  },
+  "devDependencies": {
+    "@strapi/sdk-plugin": "^5.4.0"
+  },
+  "peerDependencies": {
+    "@strapi/strapi": "^5.0.0",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0"
+  },
+  "engines": {
+    "node": ">=18.0.0 <=24.x.x",
+    "npm": ">=6.0.0"
+  },
+  "strapi": {
+    "kind": "plugin",
+    "name": "auto-save",
+    "displayName": "Auto Save",
+    "description": "Automatically saves Strapi v5 content entries as you type. Debounced background saves, live status indicator, and zero configuration required.",
+    "pluginLogo": "./logo.png"
+  }
+}
